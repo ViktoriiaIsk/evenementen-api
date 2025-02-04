@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import eventRoutes from "./routes/eventRoutes";
 import setupSwagger from "./swagger";
-
+import {Event} from "./models/Event"; 
 dotenv.config();
 
 const app = express();
@@ -15,8 +15,13 @@ setupSwagger(app);
 app.use(cors());
 app.use(express.json());
 app.use("/api", eventRoutes);
-app.get("/", (req, res) => {
-    res.send("🎉 API is running! Use /api/events to fetch events.");
+app.get("/", async (req, res) => {
+    try {
+      const events = await Event.find(); // Получаем все события из базы данных
+      res.json(events); // Отправляем JSON-ответ
+    } catch (error) {
+      res.status(500).json({ message: "Er is een fout opgetreden." });
+    }
   });
   
 
