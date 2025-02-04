@@ -15,6 +15,10 @@ setupSwagger(app);
 app.use(cors());
 app.use(express.json());
 app.use("/api", eventRoutes);
+app.get("/", (req, res) => {
+    res.send("🎉 API is running! Use /api/events to fetch events.");
+  });
+  
 
 // Verbind met MongoDB
 mongoose
