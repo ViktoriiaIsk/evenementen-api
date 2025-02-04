@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist",
+      "module": "CommonJS",
+      "target": "ES6",
+      "strict": true,
+      "rootDir": "./",
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true
+    },
+    "include": ["server.ts", "controllers/**/*.ts", "routes/**/*.ts", "models/**/*.ts"]
+  }
+  

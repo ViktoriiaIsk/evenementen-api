@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+package-lock.json
+
+# Среда разработки
+.DS_Store
+.idea/
+.vscode/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Переменные окружения
+.env
+.env.local
+.env.development
+.env.production
+
+# TypeScript
+dist/
+*.tsbuildinfo
+
+# Swagger
+swagger-output.json
+
+# Настройки ОС
+Thumbs.db
